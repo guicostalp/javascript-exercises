@@ -1,7 +1,6 @@
 
 const repeatString = function(str, multi) {
-    multi = -5;
-    str = 'hey';
+
 
     let multiStr = '';
 
