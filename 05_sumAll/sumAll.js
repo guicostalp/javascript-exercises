@@ -7,11 +7,11 @@ const sumAll = function(...arg) {
     largerNumber = secondNumber;
 
 
-    if (isNaN(firstNumber) || isNaN(secondNumber)) {
+    if (!Number.isInteger(firstNumber) || !Number.isInteger(secondNumber)) {
         return 'ERROR';
     }
-    
-    if (firstNumber < 0 || secondNumber <0) {
+
+    if (firstNumber < 0 || secondNumber < 0) {
 
         return 'ERROR';
     }
