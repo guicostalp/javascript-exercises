@@ -10,6 +10,15 @@ const findTheOldest = function(people) {
 
     const d = new Date();
     let year = d.getFullYear();
+    
+
+    const getYear = people.find(people => people.name === 'Carly');
+
+    console.log(getYear);
+
+
+/*https://appdividend.com/2022/03/08/javascript-array-includes/*/
+
 
 
     oldest = Math.max(carlyAge, rayAge, janeAge);
