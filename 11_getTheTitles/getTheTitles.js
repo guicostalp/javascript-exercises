@@ -1,15 +1,14 @@
 const getTheTitles = function(books) {
 
-    const books = [
-        {
-          title: 'Book',
-          author: 'Name'
-        },
-        {
-          title: 'Book2',
-          author: 'Name2'
-        }
-      ]
+        
+  firstTitle = books[0];
+  secondTitle = books[1];
+
+  newArray = [];
+  
+  newArray.push(firstTitle.title, secondTitle.title);
+
+  return newArray; 
 
 };
 

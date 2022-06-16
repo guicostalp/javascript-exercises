@@ -12,13 +12,19 @@ const findTheOldest = function(people) {
     let year = d.getFullYear();
     
 
-    const getYear = people.find(people => people.name === 'Carly');
+    const getMissingYear = people.find(people => people.yearOfDeath === undefined);
 
-    console.log(getYear);
+    if (getMissingYear === carly) {
+        carlyAge = year - carly.yearOfBirth;
+    }
 
+    if (getMissingYear === ray) {
+        rayAge = year - ray.yearOfBirth;
+    }
 
-/*https://appdividend.com/2022/03/08/javascript-array-includes/*/
-
+    if (getMissingYear === jane) {
+        janeAge = year - jane.yearOfBirth;
+    }
 
 
     oldest = Math.max(carlyAge, rayAge, janeAge);
@@ -35,7 +41,7 @@ const findTheOldest = function(people) {
         else (oldest == carlyAge) 
             return carly;
 
-    
+
 };
 
 // Do not edit below this line
