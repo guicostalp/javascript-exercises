@@ -9,9 +9,11 @@
 <body>
 
     <script>
-    const caesar = function(phrase, index) {
+    const caesar = function(words, index) {
       
-      phrase = phrase.toLowerCase();
+
+      
+      phrase = words.toLowerCase();
 
       
       alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
@@ -55,24 +57,24 @@
 
       }
 
-    prepCipher = cipher.charAt(0).toUpperCase() + cipher.slice(1); 
+    prepCipher = cipher.charAt(0) + cipher.slice(1); 
+
     finalCipher = "";
 
 
       
-    for (let i = 0; i <= (prepCipher.length - 1) ; ++i) {      
+    for (let i = 0; i <= (words.length - 1) ; ++i) {      
 
-        if (prepCipher.charAt(i).toUpperCase() == phrase.charAt(i)) {
+        if (words.charAt(i) == phrase.charAt(i)) {
+            finalCipher += prepCipher.charAt(i);
 
-            finalCipher += prepCipher.charAt(i).toUpperCase();
-            console.log(prepCipher.charAt(i));
-            console.log(phrase.charAt(i));
-
+             
         }
 
         else {
 
-            finalCipher += prepCipher.charAt(i);
+           finalCipher += prepCipher.charAt(i).toUpperCase();
+
 
         }
   
@@ -80,6 +82,7 @@
 
 
     return finalCipher
+
 
   };
 
