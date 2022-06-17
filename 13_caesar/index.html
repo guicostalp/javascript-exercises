@@ -9,30 +9,81 @@
 <body>
 
     <script>
-        
-
-
-
     const caesar = function(phrase, index) {
       
-     
-        
-        alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-                    "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", 
-                    "W", "X", "Y", "Z"];
+      phrase = phrase.toLowerCase();
 
-        cipher = '';
+      
+      alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+                  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", 
+                  "u", "v", "w", "x", "y", "z"];
 
-        findPosition = alphabet.indexOf(phrase);
+      punctuation = [" ", "!", ","]                    
 
-        newPosition = alphabet[findPosition + index];
+      cipher = "";
 
-        console.log(findPosition);
-        console.log(newPosition);
-    };
 
-    console.log(caesar('A', 1));
 
+      for (let i = 0; i <= (phrase.length - 1) ; ++i) {
+
+        if (punctuation.includes(phrase.charAt(i))) {  
+
+            cipher += phrase.charAt(i);
+
+        }
+
+        else { 
+          
+          findPosition = alphabet.indexOf(phrase.charAt(i));    
+
+          cipherLetter = alphabet[findPosition + index];
+
+            if ((findPosition + index) > (alphabet.length - 1)) {
+
+              wrappedPosition = (findPosition + index) - (alphabet.length - 1);
+
+              cipherLetter = alphabet[wrappedPosition - 1];
+
+
+            }
+
+
+      
+          cipher += cipherLetter;
+
+        }
+
+      }
+
+    prepCipher = cipher.charAt(0).toUpperCase() + cipher.slice(1); 
+    finalCipher = "";
+
+
+      
+    for (let i = 0; i <= (prepCipher.length - 1) ; ++i) {      
+
+        if (prepCipher.charAt(i).toUpperCase() == phrase.charAt(i)) {
+
+            finalCipher += prepCipher.charAt(i).toUpperCase();
+            console.log(prepCipher.charAt(i));
+            console.log(phrase.charAt(i));
+
+        }
+
+        else {
+
+            finalCipher += prepCipher.charAt(i);
+
+        }
+  
+    }
+
+
+    return finalCipher
+
+  };
+
+    console.log(caesar('Hello, World!', 5))
     </script>
 
     
