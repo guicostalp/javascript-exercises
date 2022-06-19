@@ -22,11 +22,11 @@ describe('translate', () => {
 		expect(pigLatin("apple")).toBe('appleay');
 	});
 
-	test.skip('translates a word beginning with a consonant', () => {
+	test('translates a word beginning with a consonant', () => {
 		expect(pigLatin("banana")).toBe("ananabay");
 	});
 
-	test.skip('translates a word beginning with two consonants', () => {
+	test('translates a word beginning with two consonants', () => {
 		expect(pigLatin("cherry")).toBe('errychay');
 	});
 

@@ -46,18 +46,12 @@ const caesar = function(words, index) {
 
       if (finalIndex < 0) {
 
-            finalIndex = (findPosition + index) + alphabet.length
-            
-        
+            finalIndex = (findPosition + index) + alphabet.length;       
 
       }
 
              
       cipherLetter = alphabet[finalIndex];
-     
-
-
-
 
         cipher += cipherLetter;
 

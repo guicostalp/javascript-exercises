@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Latin - Exercise 14</title>
+</head>
+<body>
+
+    <script>
+
+
+        function pigLatin(string) {
+
+            phrase = string.toLowerCase();
+
+            vowel = ["a", "e", "i", "o", "u"];
+            consonants = ["ch", "thr", "sch", "qu"]
+            newPhrase = '';
+
+            if (vowel.includes(phrase.charAt(0))) {
+
+                newPhrase = phrase + 'ay';
+
+                return newPhrase;
+
+            }
+
+            else {
+
+                for (let i = 0; i < phrase.length; ++i) {
+
+                    newPhrase += phrase.charAt(i)
+
+                    console.log(newPhrase)
+
+                    if (consonants.includes(newPhrase)){
+                        index = consonants.indexOf(newPhrase)
+                        newPhrase = consonants[index]
+                        console.log(newPhrase)
+
+                    }
+
+                   
+       
+
+
+                }
+
+
+
+            }
+
+};
+
+    console.log(pigLatin('cherry'));
+    </script>
+    
+</body>
+</html>
