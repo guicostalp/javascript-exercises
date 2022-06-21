@@ -13,48 +13,45 @@
 
         function pigLatin(string) {
 
-            phrase = string.toLowerCase();
+    phrase = string.toLowerCase();
 
-            vowel = ["a", "e", "i", "o", "u"];
-            consonants = ["ch", "thr", "sch", "qu"]
-            newPhrase = '';
+    vowel = ["a", "e", "i", "o", "u"];
+    consonants = ["ch", "thr", "sch", "qu"]
+    newPhrase = '';
 
-            if (vowel.includes(phrase.charAt(0))) {
+    if (vowel.includes(phrase.charAt(0))) {
 
-                newPhrase = phrase + 'ay';
+        return phrase + 'ay';
 
-                return newPhrase;
+    }
 
-            }
+    else {
 
-            else {
+        for (let i =  0; i < phrase.length ; ++i) {
 
-                for (let i = 0; i < phrase.length; ++i) {
+            newPhrase += phrase.charAt(i)
 
-                    newPhrase += phrase.charAt(i)
+            if (consonants.includes(newPhrase)){
 
-                    console.log(newPhrase)
+                index = consonants.indexOf(newPhrase)
+                consonantStart = consonants[index]
+            }              
+            
+        }
+    
+    console.log(newPhrase)
 
-                    if (consonants.includes(newPhrase)){
-                        index = consonants.indexOf(newPhrase)
-                        newPhrase = consonants[index]
-                        console.log(newPhrase)
+        
 
-                    }
+    return newPhrase.split(consonantStart)
+                    .reverse() 
+                    .join(consonantStart) + 'ay'
 
-                   
-       
-
-
-                }
-
-
-
-            }
+    }
 
 };
 
-    console.log(pigLatin('cherry'));
+    console.log(pigLatin('banana'));
     </script>
     
 </body>

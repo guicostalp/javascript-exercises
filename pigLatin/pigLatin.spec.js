@@ -34,7 +34,7 @@ describe('translate', () => {
 		expect(pigLatin("eat pie")).toBe('eatay iepay');
 	});
 
-	test.skip('translates a word beginning with three consonants', () => {
+	test('translates a word beginning with three consonants', () => {
 		expect(pigLatin("three")).toBe("eethray");
 	});
 

@@ -2,25 +2,39 @@ function pigLatin(string) {
 
     phrase = string.toLowerCase();
 
-            vowel = ["a", "e", "i", "o", "u"];
-            consonants = ["ch", "thre", "sch", "qu"]
-            newPhrase = '';
+    vowel = ["a", "e", "i", "o", "u"];
+    consonants = ["ch", "thr", "sch", "qu"]
+    newPhrase = '';
 
-            if (vowel.includes(phrase.charAt(0))) {
+    if (vowel.includes(phrase.charAt(0))) {
 
-                newPhrase = phrase + 'ay';
+        return phrase + 'ay';
 
-                return newPhrase;
+    }
 
-            }
+    else {
+
+        for (let i =  0; i < phrase.length ; ++i) {
             
-            else{
+            newPhrase += phrase.charAt(i)
 
-            return phrase.split("").reverse().join("") + 'ay';
+            if (consonants.includes(newPhrase)){
 
-            }
+                index = consonants.indexOf(newPhrase)
+                consonantStart = consonants[index]
+            }              
+            
+        }
+    
+    console.log(newPhrase)
 
 
+
+    return newPhrase.split(consonantStart)
+                    .reverse() 
+                    .join(consonantStart) + 'ay'
+
+    }
 };
   
 // Do not edit below this line
